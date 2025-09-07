@@ -389,19 +389,20 @@
                 </div>
             </div>
 
-            <form action="">
+            <form action="https://api.web3forms.com/submit" method="POST">
                 <div class="w-full lg:w-2/3 lg:mx-auto">
                 <div class="w-full px-4 mb-8">
                     <label for="name" class="text-base font-bold text-primary">Nama</label>
-                    <input type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                    <input type="text" id="name" name="name" required placeholder="Bastian" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
             </div>
             <div class="w-full px-4 mb-8">
+                <input type="hidden" name="access_key" value="d1c0bea2-c2b5-406b-93b3-260d201feaa6">
                 <label for="email" class="text-base font-bold text-primary">Email</label>
-                <input type="email" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                <input type="email" id="name" name="email" required placeholder="bastian123456@gmail.com" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
             </div>
             <div class="w-full px-4 mb-8">
                 <label for="message" class="text-base font-bold text-primary">Pesan</label>
-                <textarea type="text" id="message" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"></textarea>
+                <textarea type="text" id="message" name="message" required placeholder="I Love You" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"></textarea>
             </div>
             <div class="w-full px-4">
                 <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
@@ -409,7 +410,7 @@
             </div>
             </form>
         </div>
-     </section>
+    </section>
     <!-- Contact Section End -->
 
     <!-- Footer Section Start -->
@@ -466,35 +467,5 @@
 
     <!-- JavaScript -->
     <script src="dist/js/script.js"></script>
-
-    <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbxGkO9ZG0lnv0PGfbROrSTpz6NlIS_6-gUpwcOAaHJyHlz0Im_pbA9LwCNAj_g9IzHefA/exec"; // dari langkah 2
-
-    document.getElementById("myForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const formData = {
-        name: this.name.value,
-        email: this.email.value,
-        message: this.message.value
-      };
-
-      fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("response").innerText = "Thanks, data saved!";
-        this.reset();
-      })
-      .catch(err => {
-        document.getElementById("response").innerText = "Error: " + err;
-      });
-    });
-    </script>
 </body>
 </html>
