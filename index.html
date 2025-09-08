@@ -396,7 +396,7 @@
                     <input type="text" id="name" name="name" required placeholder="Bastian" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
             </div>
             <div class="w-full px-4 mb-8">
-                <input type="hidden" name="access_key" value="d1c0bea2-c2b5-406b-93b3-260d201feaa6">
+                <input type="hidden" name="access_key" value="976af633-4e6c-4d2d-89b4-b9486bbff62c">
                 <label for="email" class="text-base font-bold text-primary">Email</label>
                 <input type="email" id="name" name="email" required placeholder="bastian123456@gmail.com" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
             </div>
@@ -470,5 +470,13 @@
 
     <!-- JavaScript -->
     <script src="dist/js/script.js"></script>
+
+    <script>
+        // Deteksi in-app browser Instagram
+        if (navigator.userAgent.includes('Instagram')) {
+            const warningDiv = document.getElementById('inAppBrowserWarning');
+            warningDiv.classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
